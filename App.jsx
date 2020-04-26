@@ -3,7 +3,7 @@ const { Route, Switch } = ReactRouterDOM
 const history = History.createBrowserHistory()
 import { MissKeep } from './pages/MissKeep.jsx'
 import { MissEmail } from './pages/MissEmail.jsx'
-
+import {NavBar} from './cmps/NavBar.jsx'
 
 
 
@@ -14,6 +14,7 @@ export class App extends React.Component {
             <Router >
                 <header>
                     <h1>Appsus is us</h1>
+                    <NavBar></NavBar>
                 </header>
                 <main>
                     <Switch>
