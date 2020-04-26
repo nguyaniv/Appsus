@@ -13,7 +13,7 @@ export class App extends React.Component {
         return (
             <Router >
                 <header>
-                    <h1>Cars R Us</h1>
+                    <h1>Appsus is us</h1>
                 </header>
                 <main>
                     <Switch>
