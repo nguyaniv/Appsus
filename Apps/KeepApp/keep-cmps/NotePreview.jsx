@@ -7,6 +7,8 @@ export default function NotePreview(props) {
 
             {note && note.type === 'NoteText' &&
                 <section>
+
+                    
                     <h2>{note.type}  </h2>
                     <p>{note.info.txt}</p>
 
@@ -26,12 +28,12 @@ export default function NotePreview(props) {
             }
 
 
-            {note && note.type === 'NoteTodos' &&
+            {note && note.type === 'NoteTodos' && 
                 <section>
                     <h2>{note.type}</h2>
 
                     {note.info.todos.map((todo) => {
-                 return       <div key={todo.id}>
+                        return <div key={todo.id}>
                             {console.log(todo.txt)}
                             <p>{todo.txt}</p>
                         </div>
