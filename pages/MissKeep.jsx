@@ -1,23 +1,36 @@
+
+import missKeepService from '../services/missKeepService.js'
+import NotesList from '../cmps/NotesList.jsx'
 export class MissKeep extends React.Component {
 
 
 
     state = {
-        notes : null
+        notes: null
     }
 
-    componentDidMount(){
+    componentDidMount() {
 
-        
+        this.loadNotes()
 
     }
 
 
+    loadNotes() {
+        var notes = missKeepService.query()
+        this.setState({ notes })
+    }
 
 
-    render(){
+    render() {
+        const { notes } = this.state
+
+
         return (
-            <h1>test</h1>
+            <div>
+                {notes && <NotesList notes={notes} />}
+            </div>
+
         )
     }
 }
