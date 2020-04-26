@@ -4,7 +4,7 @@ const history = History.createBrowserHistory()
 import { MissKeep } from './pages/MissKeep.jsx'
 import { MissEmail } from './pages/MissEmail.jsx'
 import {NavBar} from './cmps/NavBar.jsx'
-
+import {Home} from './pages/Home.jsx'
 
 
 export class App extends React.Component {
@@ -20,6 +20,7 @@ export class App extends React.Component {
                     <Switch>
                         <Route component = {MissKeep} path ='/keep'></Route>
                         <Route component = {MissEmail} path ='/email'></Route>
+                        <Route component = {Home} path ='/home'></Route>
                    </Switch>
                    
                      

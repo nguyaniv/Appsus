@@ -9,6 +9,9 @@ function makeId(length=3) {
     return text;
 }
 
+
+
+
 export default {
     makeId
 }

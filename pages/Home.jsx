@@ -1,13 +1,13 @@
-export function Home(props){
+export function Home(props) {
 
-return (
+    return (
 
-    <div>
+        <div>
 
-        <h2>this is the home page</h2>
-    </div>
+            <h2>this is the home page</h2>
+        </div>
 
 
-)
+    )
 
 }

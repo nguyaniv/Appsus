@@ -6,6 +6,7 @@ export function NavBar(props) {
         <ul>
             <li><NavLink exact to='/keep'>keep</NavLink></li>
             <li><NavLink to='/email'>Email</NavLink></li>
+            <li><NavLink to='/home'>Home</NavLink></li>
         </ul>
     </nav>
 
