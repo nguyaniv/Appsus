@@ -43,7 +43,7 @@ export class MissKeep extends React.Component {
 
 
         return (
-            <section>
+            <section className="keep-notes">
                 {notes && <NotesAdd addnote={this.addNote} />}
 
                 <div>

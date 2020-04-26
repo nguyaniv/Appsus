@@ -25,6 +25,8 @@ var gNotes = [
             url: "https://usercontent2.hubstatic.com/13931149_f1024.jpg",
             title: "Me playing Mi"
         },
+        isPinned: true,
+
         style: {
             backgroundColor: "#00d"
         }
@@ -32,6 +34,7 @@ var gNotes = [
     {
         id: 3,
         type: "NoteTodos",
+        isPinned: true,
         info: {
             label: "How was it:",
             todos: [
@@ -46,19 +49,18 @@ var gNotes = [
 
 
 function save(noteToSave) {
-    var savedNote = noteToSave;
+
     if (noteToSave.id) {
         const noteIdx = _getIdxById(noteToSave.id)
         gNotes[noteIdx] = noteToSave;
         // gCars.splice(carIdx, 1, car)
     } else {
-        savedNote = noteToSave
-        savedNote.id = utilService.makeId()
-        savedNote.createdAt = Date.now()
-        gNotes.push(savedNote)
+        noteToSave.id = utilService.makeId()
+        noteToSave.createdAt = Date.now()
+        gNotes.push(noteToSave)
     }
 
-    var res = Promise.resolve(savedNote)
+    var res = Promise.resolve(noteToSave)
     console.log(gNotes)
 
     return res;

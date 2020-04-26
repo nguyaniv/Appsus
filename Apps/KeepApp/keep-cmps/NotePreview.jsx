@@ -6,9 +6,9 @@ export default function NotePreview(props) {
         <article className="note-preview">
 
             {note && note.type === 'NoteText' &&
-                <section>
+                <section className="keep-note-txt">
 
-                    
+
                     <h2>{note.type}  </h2>
                     <p>{note.info.txt}</p>
 
@@ -19,17 +19,17 @@ export default function NotePreview(props) {
             {note && note.type === 'NoteImg' &&
 
 
-                <section>
+                <section className="keep-img-note">
                     {console.log(note.info.url)}
                     <h2>{note.type}  </h2>
-                    <img src={note.info.url} alt="" />
+                    <img src={note.info.url}  />
 
                 </section>
             }
 
 
-            {note && note.type === 'NoteTodos' && 
-                <section>
+            {note && note.type === 'NoteTodos' &&
+                <section className= "keep-todo">
                     <h2>{note.type}</h2>
 
                     {note.info.todos.map((todo) => {
