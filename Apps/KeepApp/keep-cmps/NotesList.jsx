@@ -5,7 +5,7 @@ export default function NotesList(props) {
     var notes = props.notes
     return (
 
-        <div className="notes-list">
+        <div className="keep-notes-list">
 
             {notes.map(note =>
                  <NotePreview key={note.id} note={note} />)}
