@@ -1,7 +1,7 @@
 
 
-import mailService from '../services/mailService.js'
-import { MailList } from '../cmps/MailList.jsx'
+import mailService from '../Apps/MailApp/mailService.js'
+import { MailList } from '../Apps/MailApp/mail-cmps/MailList.jsx'
 
 export class MissEmail extends React.Component {
     state = {

@@ -1,6 +1,6 @@
 
-import missKeepService from '../services/missKeepService.js'
-import NotesList from '../cmps/NotesList.jsx'
+import missKeepService from '../Apps/KeepApp/missKeepService.js'
+import NotesList from '../Apps/KeepApp/keep-cmps/NotesList.jsx'
 export class MissKeep extends React.Component {
 
 

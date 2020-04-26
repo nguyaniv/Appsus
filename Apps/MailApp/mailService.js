@@ -1,4 +1,4 @@
-import utilService from './utilService.js'
+import utilService from '../../services/utilService.js'
 // const STORAGE_KEY = 'mails';
 const gDefaultMails= [
     _createMail('sub1','body1'),
