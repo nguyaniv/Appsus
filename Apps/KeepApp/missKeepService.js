@@ -1,6 +1,11 @@
 
+
+import utilService from '../../services/utilService.js'
+
 export default {
-    query
+    query,
+    save,
+
 }
 
 
@@ -30,8 +35,8 @@ var gNotes = [
         info: {
             label: "How was it:",
             todos: [
-                {id:1, txt: "Do that", doneAt: null },
-                {id:2, txt: "Do this", doneAt: 187111111 }
+                { id: 1, txt: "Do that", doneAt: null },
+                { id: 2, txt: "Do this", doneAt: 187111111 }
             ]
         }
     }
@@ -39,6 +44,46 @@ var gNotes = [
 
 
 
-function query(){
+
+function save(noteToSave) {
+    var savedNote = noteToSave;
+    if (noteToSave.id) {
+        const noteIdx = _getIdxById(noteToSave.id)
+        gNotes[noteIdx] = noteToSave;
+        // gCars.splice(carIdx, 1, car)
+    } else {
+        savedNote = noteToSave
+        savedNote.id = utilService.makeId()
+        savedNote.createdAt = Date.now()
+        gNotes.push(savedNote)
+    }
+
+    var res = Promise.resolve(savedNote)
+    console.log(gNotes)
+
+    return res;
+}
+
+
+function getById(noteId) {
+    const note = gNotes.find(note => note.id === noteId)
+    return Promise.resolve(note);
+}
+function _getIdxById(noteId) {
+    return gNotes.findIndex(note => note.id === noteId)
+}
+
+function _createNote(type, txt) {
+    return {
+        type,
+        txt,
+        id: utilService.makeId(),
+        createdAt: Date.now()
+    }
+}
+
+function query() {
+    console.log(gNotes);
+
     return gNotes
 }
