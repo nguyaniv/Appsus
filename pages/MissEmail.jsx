@@ -1,7 +1,7 @@
 
-
 import mailService from '../Apps/MailApp/mailService.js'
 import { MailList } from '../Apps/MailApp/mail-cmps/MailList.jsx'
+import { MailCreate } from '../Apps/MailApp/mail-cmps/MailCreate.jsx'
 
 export class MissEmail extends React.Component {
     state = {
@@ -28,12 +28,11 @@ export class MissEmail extends React.Component {
     render() {
         const { mails } = this.state
         return (
-            <div>
+            <section>
+                {mails && <MailList deleteMail={this.onDelete} mails={mails}></MailList>} 
                 <h2>test3</h2>
-                {
-                    mails && <MailList deleteMail={this.onDelete} mails={mails}></MailList>
-                }
-            </div>
+                <div> {<MailCreate />}</div>
+            </section>
         )
     }
 
