@@ -26,20 +26,13 @@ export default class NotesAdd extends React.Component {
         this.setState({ type: ev.target.value })
     }
 
-
-
-
     onSaveNote = (ev) => {
         ev.preventDefault()
         this.props.addnote({ ...this.state })
         ev.target.reset()
-
-
     }
 
-
     render() {
-
         return (
             <div>
                 <form onSubmit={this.onSaveNote}>
