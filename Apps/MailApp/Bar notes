@@ -1,6 +1,23 @@
 Email:
-b
+- only the prime app - missemail talks with the services
 
-Mutual: 
-creating services espcially for the routs
+create:
+createemail send the data to missemail (likeondelete)
+and missemail save it
+- the event of adding happens on change everytime the user type (check handleinput)
+ 
+ details:
+-onopen email when its true open the maildetail comp
+
+every mail will get a class by its condition read/unread
+
+filters:
+display unread emails,
+display favorites
+create trash bin - insted of delete it add it to trashbin and if its in the trash bin then delete it totally
+
+Notes:
+1. get it to look OK
+2. when details pressed change the isRead
+3. filters
 

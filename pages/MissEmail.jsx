@@ -1,14 +1,20 @@
-
 import mailService from '../Apps/MailApp/mailService.js'
 import { MailList } from '../Apps/MailApp/mail-cmps/MailList.jsx'
 import { MailCreate } from '../Apps/MailApp/mail-cmps/MailCreate.jsx'
+import  MailDetails  from '../Apps/MailApp/mail-cmps/MailDetails.jsx'
 
 export class MissEmail extends React.Component {
     state = {
-        mails: null
+        mails: null,
+        selectedMail: null
     }
 
     componentDidMount() {
+        this.loadMails()
+    }
+
+    onSaveMail = (mail) => {
+        mailService.save(mail)
         this.loadMails()
     }
 
@@ -17,23 +23,31 @@ export class MissEmail extends React.Component {
         this.setState({ mails })
     }
 
-    // onSetFilter() {
-
-    // }
     onDelete = (id) => {
         mailService.deleteMail(id)
         this.loadMails()
     }
+    onSelectMail = (selectedMail) => {
+     // call function in the service that will change the isRead
+        this.setState({ selectedMail })
+    }
+
+    onClearSelected = () => {
+        this.setState({ selectedMail: null })
+    }
 
     render() {
-        const { mails } = this.state
+        const {selectedMail, mails } = this.state
         return (
             <section>
-                {mails && <MailList deleteMail={this.onDelete} mails={mails}></MailList>} 
-                <h2>test3</h2>
-                <div> {<MailCreate />}</div>
+                <div>{selectedMail && <MailDetails mail={selectedMail} onBack={this.onClearSelected}></MailDetails>}</div>
+                <div> {!selectedMail && <MailCreate onSaveMail={this.onSaveMail}></MailCreate>}</div>
+                {!selectedMail && mails && <MailList onSelectMail={ this.onSelectMail } deleteMail={this.onDelete} mails={mails}></MailList>}
             </section>
         )
     }
-
 }
+
+        // onSetFilter() {
+
+        // }
