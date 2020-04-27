@@ -2,6 +2,7 @@
 import missKeepService from '../Apps/KeepApp/missKeepService.js'
 import NotesList from '../Apps/KeepApp/keep-cmps/NotesList.jsx'
 import NotesAdd from '../Apps/KeepApp/keep-cmps/NotesAdd.jsx'
+import NoteEdit from '../Apps/KeepApp/keep-cmps/NoteEdit.jsx'
 export class MissKeep extends React.Component {
 
 
@@ -11,47 +12,44 @@ export class MissKeep extends React.Component {
     }
 
     componentDidMount() {
-
         this.loadNotes()
-
     }
 
-
-    loadNotes =()=> {
+    loadNotes = () => {
         var notes = missKeepService.query()
         this.setState({ notes })
     }
 
-    addNote=(note)=> {
+    onDeleteNote = (id) => {
+        missKeepService.deleteNote(id)
+        this.loadNotes()
+    }
 
-        console.log(note)
+    onEditNote=(id,editedTxt)=>{
+        missKeepService.editNote(id,editedTxt)
+        console.log(id,editedTxt);
+        this.loadNotes()
+    }
+
+    addNote = (note) => {
         missKeepService.save(note)
-
             .then(() => {
                 this.loadNotes()
             })
             .catch(err => {
                 console.log('OOPs', err);
-
             })
     }
 
-
-
     render() {
         const { notes } = this.state
-
-
         return (
             <section className="keep-notes">
-                {notes && <NotesAdd addnote={this.addNote} />}
-
+                {notes && <NotesAdd addnote={this.addNote}  handleinput={this.handleInput} />}
                 <div>
-                    {notes && <NotesList notes={notes} />}
+                    {notes && <NotesList deleteNote={this.onDeleteNote} handleinput={this.handleInput} editNote={this.onEditNote} notes={notes} />}
                 </div>
-
             </section>
-
         )
     }
 }

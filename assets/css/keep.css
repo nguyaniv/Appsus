@@ -1,8 +1,6 @@
 .keep-notes{
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    /* flex-direction: column; */
     background-color:white;
     justify-content: space-around;
     flex-direction: column;
@@ -10,15 +8,17 @@
 }
 
 .keep-note-txt { 
-    border: 3px solid rgb(0, 0, 0);
+    border: 3px solid rgb(167, 165, 165);
+    border-radius: 5px;
     margin: 0 10px;
-    /* display: flex; */
+    padding: 10px;
 }
 
 .keep-todo { 
-    border: 3px solid black;
+    border: 3px solid rgb(167, 165, 165);
+    border-radius: 5px;
+    padding: 5px;
     margin: 0 10px;
-
 }
 
 
@@ -29,7 +29,38 @@
 }
 
 .keep-img-note {
-    border:3px solid black ;
+    border:3px solid rgb(167, 165, 165) ;
+    border-radius: 5px;
+    padding: 5px;
+
     margin: 0 10px;
 
+}
+
+
+
+.keep-icon {
+    font-size: 1.5em;
+    margin: 2px;
+}
+
+.note-preview input {
+    margin: 5px;
+}
+
+.keep-form { 
+    margin: 10px;
+    background-color: silver;
+    padding: 15px;
+    border: 3px solid  rgb(104, 98, 98);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.keep-form input{
+    margin: 10px;
+}
+
+.keep-form select {
+    margin: 10px;
 }

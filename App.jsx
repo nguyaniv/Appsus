@@ -21,6 +21,7 @@ export class App extends React.Component {
                         <Route component={MissKeep} path='/keep'></Route>
                         <Route component={MissEmail} path='/email'></Route>
                         <Route component={Home} path='/home'></Route>
+                        <Route component={Home} path='/'></Route>
                     </Switch>
                 </main>
                 <footer className="main-footer">

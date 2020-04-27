@@ -5,7 +5,8 @@ import utilService from '../../services/utilService.js'
 export default {
     query,
     save,
-
+    deleteNote,
+    editNote
 }
 
 
@@ -84,8 +85,30 @@ function _createNote(type, txt) {
     }
 }
 
+
+function deleteNote(id) {
+    console.log('deleting from service');
+
+    const idx = gNotes.findIndex(note => note.id === id)
+    gNotes.splice(idx, 1)
+
+}
+
+function editNote(id,txt) {
+    
+    const note = gNotes.find(note => note.id === id)
+    
+    note.info.txt = txt
+    console.log(note);
+    
+
+
+}
+
 function query() {
     console.log(gNotes);
 
     return gNotes
 }
+
+
