@@ -12,18 +12,18 @@ export class App extends React.Component {
     render() {
         return (
             <Router >
-                <header class="main-header container flex space-between align-center">
-                    <h1 class="logo">Appsus.</h1>
+                <header className="main-header container flex space-between align-center">
+                    <h1 className="logo">Appsus.</h1>
                     <NavBar></NavBar>
                 </header>
-                <main class="main-content">
+                <main className="main-content">
                     <Switch>
                         <Route component={MissKeep} path='/keep'></Route>
                         <Route component={MissEmail} path='/email'></Route>
                         <Route component={Home} path='/home'></Route>
                     </Switch>
                 </main>
-                <footer class="main-footer">
+                <footer className="main-footer">
                     coffeerights 2020 &copy;
                 </footer>
             </Router>
