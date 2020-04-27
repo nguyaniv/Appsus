@@ -1,24 +1,113 @@
+@import "helpers.css";
+@import "hamburger.css";
 @import "keep.css";
 @import "mail.css";
 
-body {
-    background-color: lightblue;
+@font-face {
+    font-family: MadeleinaSans;
+    src: url("../fonts/Madeliena/MadeleinaSans.ttf");
 }
-input{
+@font-face {
+    font-family: Comfortaa;
+    src: url("../fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf");
+}
+
+body {
+    margin: 0;
+    font-size: 0.875rem;
+    /* width: 97vw; */
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: .6rem;
+    padding-right: .6rem;
+    box-sizing: unset;
+}
+
+.main-header {
+    width: 80vw;
+    color: #272577;
+}
+
+.main-header .logo {
+    font-family: MadeleinaSans;
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+.main-header .main-nav li {
+    letter-spacing: 0.1em;
+    font-size: 1.45rem;
+    text-transform: uppercase;
+    color: inherit;
+    font-weight: bold;  
+}
+
+.main-nav li:not(:last-child) {
+    margin-inline-end: 100px;
+}
+
+.main-content .welcome-section {
+    box-shadow: inset 0 1px 0 0.5px #272577;
+    width: 100vw;
+    height: 80vh;
+    background-image: url("../img/background3.jpg");
+    color: #5c5ce2;
+    font-family: Comfortaa;
+    font-weight: 900;
+}
+
+/* .welcome-section .opacity-box {
+    width: 100vw;
+    height: 80vh;
+     opacity: 0.3; 
+    background-color: #ffffff; 
+} */
+
+
+.opacity-box .welcome-heading {
+    margin-top: 100px;
+    text-shadow: 1px 1px #e8e8ff;
+    font-size: 4.5rem;
+}
+
+.welcome-sentences :not(:first-child) {
+    margin-top: 30px;
+    color: white;
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    text-shadow: 0.5px 0.5px #5c5ce2;
+    background-color: #c7c6f01a;
+    max-width: 400px;
+}
+
+.main-footer {
+    background-color: #f0f0f0;
+    padding: 60px 0 70px;
+    font-size: 1.875rem;
+    text-align: center;
+}
+
+input {
     padding: 8px;
 }
-label{
+
+label {
     margin: 0 5px;
 }
-img{
+
+img {
     width: 70px;
 }
 
-
 header {
-    background-color: darkcyan;
+    font-family: MadeleinaSans;
     padding: 10px;
 }
+
 footer {
     background-color: darkgray;
     margin: 20px;
@@ -36,19 +125,19 @@ footer {
 }
 
 .active {
-    color: gold;
+    padding: 5px;
+    background-color: #c8bff67a;
 }
 
 #map {
     height: 300px;
-    background-color:beige;
+    background-color: beige;
 }
-
 
 .user-msg {
     background-color: aliceblue;
     position: absolute;
-    top:0;
+    top: 0;
     right: 10px;
     font-size: 1.2em;
     padding: 10px 20px;
@@ -62,5 +151,3 @@ footer {
     background-color: lightgray;
     padding: 29px;
 }
-
-

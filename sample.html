@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets\css\main.css">
+    <title>Sample</title>
+</head>
+
+<body>
+    <header class="main-header container flex space-between align-center">
+        <h1 class="logo">Appsus.</h1>
+        <nav>
+            <ul class="main-nav flex clean-list">
+                <li>keep</li>
+                <li>Email</li>
+                <li>Home</li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="welcome-section">
+            <div class="opacity-box">
+                <div class="welcome-sentences container flex column text-center align-center">
+                    <div class="welcome-heading">Making It Easy</div>
+                    <div>✎ Save Yours Ideas</div>
+                    <div>✉ Stay Connected</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="add-email">
+                <h1>add Email:</h1>
+                <form onSubmit={this.onSaveMail}>
+                    <label>Subject</label>
+                    <input type="text" value={mail.subject} placeholder='subject' onChange={this.handleInput}
+                        name="subject" />
+                    <label>Body</label>
+                    <input type="text" value={mail.body} placeholder='body' onChange={this.handleInput} name="body" />
+                    <button>Save</button>
+                </form>
+            </div>
+            <div class="email-table">
+                <table>
+                    <thead></thead>
+                    <tbody class="">
+                        <tr>sub1</tr>
+                        <tr>sub2</tr>
+                        <tr>sub3</tr>
+                        <tr>sub4</tr>
+                        <tr>sub5</tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+    <footer class="main-footer">
+        coffeerights 2020 &copy;
+    </footer>
+</body>
+
+</html>

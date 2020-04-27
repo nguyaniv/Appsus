@@ -3,8 +3,8 @@ const { Route, Switch } = ReactRouterDOM
 const history = History.createBrowserHistory()
 import { MissKeep } from './pages/MissKeep.jsx'
 import { MissEmail } from './pages/MissEmail.jsx'
-import {NavBar} from './cmps/NavBar.jsx'
-import {Home} from './pages/Home.jsx'
+import { NavBar } from './cmps/NavBar.jsx'
+import { Home } from './pages/Home.jsx'
 
 
 export class App extends React.Component {
@@ -12,21 +12,19 @@ export class App extends React.Component {
     render() {
         return (
             <Router >
-                <header>
-                    <h1>Appsus is us</h1>
+                <header class="main-header container flex space-between align-center">
+                    <h1 class="logo">Appsus.</h1>
                     <NavBar></NavBar>
                 </header>
-                <main>
+                <main class="main-content">
                     <Switch>
-                        <Route component = {MissKeep} path ='/keep'></Route>
-                        <Route component = {MissEmail} path ='/email'></Route>
-                        <Route component = {Home} path ='/home'></Route>
-                   </Switch>
-                   
-                     
+                        <Route component={MissKeep} path='/keep'></Route>
+                        <Route component={MissEmail} path='/email'></Route>
+                        <Route component={Home} path='/home'></Route>
+                    </Switch>
                 </main>
-                    <footer>
-                        coffeerights 2020 &copy;
+                <footer class="main-footer">
+                    coffeerights 2020 &copy;
                 </footer>
             </Router>
         )
