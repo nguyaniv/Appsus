@@ -1,16 +1,11 @@
 import MailPreview from './MailPreview.jsx'
 
 export function MailList(props) {
+   
     return (
         <div>
-            <table>
-                <thead></thead>
-            <tbody>
-            {
-                props.mails.map(mail => <MailPreview mail={mail} deleteMail={props.deleteMail} key={mail.id} onSelectMail={ props.onSelectMail }></MailPreview>) // fix how to map it to be rendered
-            }
-            </tbody>
-            </table>
+            <h1>Emails:</h1>
+            {props.mails.map(mail => <MailPreview mail={mail} deleteMail={props.deleteMail} openEmail={props.openEmail} key={mail.id} onSelectMail={props.onSelectMail}></MailPreview>)}
         </div>
     )
 }

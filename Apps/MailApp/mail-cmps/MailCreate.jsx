@@ -2,6 +2,7 @@ import mailService from '../mailService.js'
 
 export class MailCreate extends React.Component {
     state = {
+        // bar: true,
         mail: {
             subject: '',
             body: ''
@@ -12,6 +13,7 @@ export class MailCreate extends React.Component {
         if (this.props.mailId) {
             const mail = mailService.getById(this.props.mailId);
             this.setState({ mail })
+            // this.setState({bar:false})
         }
     }
 

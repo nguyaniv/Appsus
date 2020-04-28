@@ -19,6 +19,7 @@ export default {
     deleteMail,
     save,
     getById,
+    setAsRead,
 }
 
 function query() {
@@ -65,4 +66,9 @@ function _getIdxById(mailId) {
 function deleteMail(id) {
     const idx = gMails.findIndex(mail => mail.id === id)
     gMails.splice(idx, 1)
+}
+
+function setAsRead(id) {
+    const idx = gMails.findIndex(mail => mail.id === id)
+    gMails[idx].isRead = true;
 }
