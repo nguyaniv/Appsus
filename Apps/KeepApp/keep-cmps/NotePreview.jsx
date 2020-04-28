@@ -54,10 +54,57 @@ export default class NotePreview extends React.Component {
                     </section>
                 }
 
-                {note && note.type === 'NoteTodos' &&
+
+                {note && note.type === 'video' &&
+                    <section className="keep-img-note">
+                        <h2>{note.type}  </h2>
+                        <video controls autoPlay src={note.info.url}> </video>
+                        <button onClick={() => this.props.deleteNote(note.id)}> <span className="keep-icon">
+                            <i className="fas fa-trash-alt"></i>
+                        </span></button>
+                    </section>
+                }
+
+
+                {note && note.type === 'audio' &&
+                    <section className="keep-img-note">
+                        <h2>{note.type}  </h2>
+                        <audio controls autoPlay src={note.info.url}> </audio>
+                        <button onClick={() => this.props.deleteNote(note.id)}> <span className="keep-icon">
+                            <i className="fas fa-trash-alt"></i>
+                        </span></button>
+                    </section>
+                }
+
+
+                {note && note.type === 'youtube' &&
+                    <section className="keep-img-note">
+                        <h2>{note.type}  </h2>
+
+                        <iframe width="560" height="315"
+
+
+                            src={note.info.url} frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen></iframe>
+
+
+
+
+                        <button onClick={() => this.props.deleteNote(note.id)}> <span className="keep-icon">
+                            <i className="fas fa-trash-alt"></i>
+                        </span></button>
+                    </section>
+                }
+
+
+
+
+                {
+                    note && note.type === 'NoteTodos' &&
                     <section className="keep-todo">
                         <h2>{note.type}</h2>
-                        {note.info.todos.map((todo) => {
+                        {note.info.NoteTodos.map((todo) => {
                             return <div key={todo.id}>
                                 {console.log(todo.txt)}
                                 <p className="keep-line">{todo.txt}</p>
@@ -69,7 +116,7 @@ export default class NotePreview extends React.Component {
 
                     </section>
                 }
-            </article>
+            </article >
         )
     }
 }

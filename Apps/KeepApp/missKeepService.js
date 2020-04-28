@@ -38,7 +38,7 @@ var gNotes = [
         isPinned: true,
         info: {
             label: "How was it:",
-            todos: [
+            NoteTodos: [
                 { id: 1, txt: "Do that", doneAt: null },
                 { id: 2, txt: "Do this", doneAt: 187111111 }
             ]
@@ -50,6 +50,7 @@ var gNotes = [
 
 
 function save(noteToSave) {
+console.log('note to save:',noteToSave)
 
     if (noteToSave.id) {
         const noteIdx = _getIdxById(noteToSave.id)

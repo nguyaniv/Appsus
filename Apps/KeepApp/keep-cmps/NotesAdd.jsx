@@ -25,6 +25,12 @@ export default class NotesAdd extends React.Component {
     }
 
 
+    onAddTodo = (ev) => {
+        ev.preventDefault()
+        this.props.addtodo({...this.state})
+    }
+
+
 
     handleInput = ({ target }) => {
         const field = target.name
@@ -51,6 +57,9 @@ export default class NotesAdd extends React.Component {
                             <option value="NoteText">txt</option>
                             <option value="NoteImg">image</option>
                             <option value="NoteTodos">todo</option>
+                            <option value="video">video</option>
+                            <option value="youtube">youtube</option>
+                            <option value="audio">audio</option>
                         </select>
                         <button>Add</button>
                     </form>
@@ -69,6 +78,64 @@ export default class NotesAdd extends React.Component {
                             <option value="NoteText">txt</option>
                             <option value="NoteImg">image</option>
                             <option value="NoteTodos">todo</option>
+                            <option value="video">video</option>
+                            <option value="youtube">youtube</option>
+                            <option value="audio">audio</option>
+                        </select>
+                        <button>Add</button>
+                    </form>
+
+                }
+
+
+                {this.state.type === 'video' &&
+
+                    <form className="keep-form" onSubmit={this.onSaveNote}>
+                        <span>add an video URL:</span><input onChange={this.handleInput} type="text" name="url" />
+                        <select name="type" value={this.state.type} onChange={this.handleChangeType}>
+                            <option value="NoteText">txt</option>
+                            <option value="NoteImg">image</option>
+                            <option value="NoteTodos">todo</option>
+                            <option value="video">video</option>
+                            <option value="youtube">youtube</option>
+                            <option value="audio">audio</option>
+                        </select>
+                        <button>Add</button>
+                    </form>
+
+                }
+
+
+
+                {this.state.type === 'audio' &&
+
+                    <form className="keep-form" onSubmit={this.onSaveNote}>
+                        <span>add an audio URL:</span><input onChange={this.handleInput} type="text" name="url" />
+                        <select name="type" value={this.state.type} onChange={this.handleChangeType}>
+                            <option value="NoteText">txt</option>
+                            <option value="NoteImg">image</option>
+                            <option value="NoteTodos">todo</option>
+                            <option value="video">video</option>
+                            <option value="youtube">youtube</option>
+                            <option value="audio">audio</option>
+                        </select>
+                        <button>Add</button>
+                    </form>
+
+                }
+
+
+                {this.state.type === 'youtube' &&
+
+                    <form className="keep-form" onSubmit={this.onSaveNote}>
+                        <span>add youtube <strong>embed</strong> URL:</span><input onChange={this.handleInput} type="text" name="url" />
+                        <select name="type" value={this.state.type} onChange={this.handleChangeType}>
+                            <option value="NoteText">txt</option>
+                            <option value="NoteImg">image</option>
+                            <option value="NoteTodos">todo</option>
+                            <option value="video">video</option>
+                            <option value="youtube">youtube</option>
+                            <option value="audio">audio</option>
                         </select>
                         <button>Add</button>
                     </form>
@@ -78,29 +145,26 @@ export default class NotesAdd extends React.Component {
                 {/* 3rd type todo */}
 
 
-
                 {this.state.type === 'NoteTodos' &&
 
-                    <form className="keep-form" onSubmit={this.onSaveNote}>
-                        <span>add a note:</span><input onChange={this.handleInput} type="text" name="NoteTodos" />
+                    <form className="keep-form" onSubmit={this.onAddTodo}>
+                        <span>add a note:</span><input onChange={this.handleInput} placeholder="pliz enter your todo sepereted by comma" type="text" name="NoteTodos" />
                         <select name="type" value={this.state.type} onChange={this.handleChangeType}>
                             <option value="NoteText">txt</option>
                             <option value="NoteImg">image</option>
                             <option value="NoteTodos">todo</option>
+                            <option value="video">video</option>
+                            <option value="youtube">youtube</option>
+                            <option value="audio">audio</option>
                         </select>
                         <button>Add</button>
                     </form>
 
                 }
 
- {/* take string from input */}
-  {/* make split with , */}
-  {/* save it to obj */}
-                
-                
-
-
-
+                {/* take string from input */}
+                {/* make split with , */}
+                {/* save it to obj */}
 
 
             </div>
