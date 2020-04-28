@@ -60,7 +60,7 @@ export default class NotePreview extends React.Component {
                         {note.info.todos.map((todo) => {
                             return <div key={todo.id}>
                                 {console.log(todo.txt)}
-                                <p className="keep-line" >{todo.txt}</p>
+                                <p className="keep-line">{todo.txt}</p>
                             </div>
                         })}
                         <button onClick={() => this.props.deleteNote(note.id)}> <span className="keep-icon">
