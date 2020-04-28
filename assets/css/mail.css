@@ -1,12 +1,35 @@
+.control-menu {
+    width: 10vw;
+}
 
-.email-table table tbody {
-    background-color: red;
+.email-container {
+    width: 90vw;
+    font-family: Roboto;
+    font-size: 1rem;
+}
+
+table {
+    width: 100%;
+}
+
+table tbody tr {
+    border-top: 1px solid #dadada;
+}
+
+.subject {
+    width: 80%;
+}
+
+.single-email {
+    height: 5vh;
 }
 
 .read {
-background-color: aqua;
+    background-color: #eeeeee;
+    border-top: 1px solid #dadada;
 }
 
 .unread {
-background-color: blue;
+    background-color: white;
+    border-top: 1px solid #dadada;
 }

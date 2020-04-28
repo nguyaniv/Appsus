@@ -51,15 +51,15 @@ export class MissEmail extends React.Component {
         const { selectedMail, mails, isAddClick } = this.state
         return (
             <section className="flex">
-                <div className="flex column">
+                <div className="flex column control-menu">
                     <button onClick={this.toggleAddMail}>Compose</button>
                     <button>Sent</button>
                     <button>Trash</button>
                 </div>
-                <div>
-                <div>{selectedMail && <MailDetails mail={selectedMail} onBack={this.onClearSelected} openEmail={this.onOpenEmail} ></MailDetails>}</div>
-                <div> {isAddClick && !selectedMail && <MailCreate onSaveMail={this.onSaveMail}></MailCreate>}</div>
-                <div className="flex"> {!selectedMail && mails && <MailList onSelectMail={this.onSelectMail} deleteMail={this.onDelete} mails={mails}></MailList>} </div>
+                <div className="email-container">
+                    <div>{selectedMail && <MailDetails mail={selectedMail} onBack={this.onClearSelected} openEmail={this.onOpenEmail} ></MailDetails>}</div>
+                    <div> {isAddClick && !selectedMail && <MailCreate onSaveMail={this.onSaveMail}></MailCreate>}</div>
+                    <div>{!selectedMail && mails && <MailList onSelectMail={this.onSelectMail} deleteMail={this.onDelete} mails={mails}></MailList>} </div>
                 </div>
             </section >
         )
