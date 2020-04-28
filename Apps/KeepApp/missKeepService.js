@@ -54,7 +54,6 @@ function save(noteToSave) {
     if (noteToSave.id) {
         const noteIdx = _getIdxById(noteToSave.id)
         gNotes[noteIdx] = noteToSave;
-        // gCars.splice(carIdx, 1, car)
     } else {
         noteToSave.id = utilService.makeId()
         noteToSave.createdAt = Date.now()

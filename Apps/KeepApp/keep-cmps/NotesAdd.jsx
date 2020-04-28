@@ -50,7 +50,7 @@ export default class NotesAdd extends React.Component {
                         <select name="type" value={this.state.type} onChange={this.handleChangeType}>
                             <option value="NoteText">txt</option>
                             <option value="NoteImg">image</option>
-                            <option value="todo">todo</option>
+                            <option value="NoteTodos">todo</option>
                         </select>
                         <button>Add</button>
                     </form>
@@ -63,19 +63,45 @@ export default class NotesAdd extends React.Component {
 
                 {this.state.type === 'NoteImg' &&
 
-                    <div className="div">
-                        <h2>sdsds</h2>
-                    </div>
-
-
-
-
-
-
+                    <form className="keep-form" onSubmit={this.onSaveNote}>
+                        <span>add an image URL:</span><input onChange={this.handleInput} type="text" name="url" />
+                        <select name="type" value={this.state.type} onChange={this.handleChangeType}>
+                            <option value="NoteText">txt</option>
+                            <option value="NoteImg">image</option>
+                            <option value="NoteTodos">todo</option>
+                        </select>
+                        <button>Add</button>
+                    </form>
 
                 }
 
                 {/* 3rd type todo */}
+
+
+
+                {this.state.type === 'NoteTodos' &&
+
+                    <form className="keep-form" onSubmit={this.onSaveNote}>
+                        <span>add a note:</span><input onChange={this.handleInput} type="text" name="NoteTodos" />
+                        <select name="type" value={this.state.type} onChange={this.handleChangeType}>
+                            <option value="NoteText">txt</option>
+                            <option value="NoteImg">image</option>
+                            <option value="NoteTodos">todo</option>
+                        </select>
+                        <button>Add</button>
+                    </form>
+
+                }
+
+ {/* take string from input */}
+  {/* make split with , */}
+  {/* save it to obj */}
+                
+                
+
+
+
+
 
             </div>
         )
