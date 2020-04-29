@@ -1,3 +1,6 @@
+
+
+
 .keep-notes{
     display: flex;
     align-items: center;
@@ -19,6 +22,7 @@
     border-radius: 5px;
     padding: 5px;
     margin: 0 10px;
+    font-weight: 500;
 }
 
 
@@ -26,6 +30,10 @@
     display: flex;
     justify-content:  space-between;
     flex-wrap: wrap;
+}
+
+.keep-notes-list p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .keep-img-note {
@@ -42,6 +50,10 @@
 .keep-icon {
     font-size: 1.5em;
     margin: 2px;
+}
+.note-preview {
+    margin: 10px;
+  
 }
 
 .note-preview input {
@@ -64,3 +76,10 @@
 .keep-form select {
     margin: 10px;
 }
+
+.keep-line { 
+    font-weight: 900;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: line-through;
+}
+

@@ -6,7 +6,9 @@ export default {
     query,
     save,
     deleteNote,
-    editNote
+    editNote,
+    toggleTodo,
+    saveTodo
 }
 
 
@@ -39,8 +41,8 @@ var gNotes = [
         info: {
             label: "How was it:",
             NoteTodos: [
-                { id: 1, txt: "Do that", doneAt: null },
-                { id: 2, txt: "Do this", doneAt: 187111111 }
+                { id: 0, txt: "Do that", isDone: false },
+                { id: 1, txt: "Do this", isDone: false }
             ]
         }
     }
@@ -50,7 +52,7 @@ var gNotes = [
 
 
 function save(noteToSave) {
-console.log('note to save:',noteToSave)
+    console.log('note to save:', noteToSave)
 
     if (noteToSave.id) {
         const noteIdx = _getIdxById(noteToSave.id)
@@ -62,6 +64,26 @@ console.log('note to save:',noteToSave)
     }
 
     var res = Promise.resolve(noteToSave)
+    console.log(gNotes)
+
+    return res;
+}
+
+
+
+
+function saveTodo(toDoSave) {
+    console.log('note to save:', toDoSave)
+
+    if (toDoSave.id) {
+        const noteIdx = _getIdxById(toDoSave.id)
+        gNotes[noteIdx] = toDoSave;
+    } else {
+
+        gNotes.push(toDoSave)
+    }
+
+    var res = Promise.resolve(toDoSave)
     console.log(gNotes)
 
     return res;
@@ -94,16 +116,32 @@ function deleteNote(id) {
 
 }
 
-function editNote(id,txt) {
-    
+function editNote(id, txt) {
+
     const note = gNotes.find(note => note.id === id)
-    
+
     note.info.txt = txt
     console.log(note);
-    
-
 
 }
+
+
+function toggleTodo(noteId, todoId) {
+    const idx = gNotes.findIndex(note => note.id === noteId)
+    var todo = gNotes[idx].info.NoteTodos[todoId]
+    console.log(todo)
+
+    if (todo.isDone === true) {
+
+        todo.isDone = false
+    }
+    else if (todo.isDone === false) {
+        todo.isDone = true
+    }
+
+    console.log(gNotes)
+}
+
 
 function query() {
     console.log(gNotes);

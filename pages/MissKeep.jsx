@@ -39,20 +39,26 @@ export class MissKeep extends React.Component {
             })
     }
 
+    onToggleTodoLine = (noteId,todoId) =>{
+        missKeepService.toggleTodo(noteId,todoId)
+        this.loadNotes()
+    }
+
     addTodo = (todo) => {
-        console.log(todo)
+        console.log(todo.info.NoteTodos)
         
         var todos = todo.info.NoteTodos
         var todoList = todos.split(',')
-      var newTodoList =  todoList.map(todo =>{
-    return  {id: utilService.makeId(), txt:todo, doneAt: Date.now() }
+      var newTodoList =  todoList.map((todo,idx) =>{
+          var newId = utilService.createTodoId()
+    return  {id: idx, txt:todo, doneAt: Date.now(), isDone: false}
         })
         console.log(newTodoList)
             todo.info.NoteTodos = newTodoList
 
             
 
-            missKeepService.save(todo)
+            missKeepService.saveTodo(todo)
             .then(() => {
                 this.loadNotes()
             })
@@ -68,7 +74,7 @@ export class MissKeep extends React.Component {
             <section className="keep-notes">
                 {notes && <NotesAdd addtodo={this.addTodo} addnote={this.addNote} handleinput={this.handleInput} />}
                 <div>
-                    {notes && <NotesList deleteNote={this.onDeleteNote} handleinput={this.handleInput} editNote={this.onEditNote} notes={notes} />}
+                    {notes && <NotesList todotoggleline={this.onToggleTodoLine} deleteNote={this.onDeleteNote} handleinput={this.handleInput} editNote={this.onEditNote} notes={notes} />}
                 </div>
             </section>
         )

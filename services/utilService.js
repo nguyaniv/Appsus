@@ -9,9 +9,12 @@ function makeId(length=3) {
     return text;
 }
 
-
-
+function createTodoId() {
+    return todoId
+}
+var todoId = 4
 
 export default {
-    makeId
+    makeId,
+    createTodoId
 }

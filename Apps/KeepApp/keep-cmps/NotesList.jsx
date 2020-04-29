@@ -7,7 +7,7 @@ export default function NotesList(props) {
     return (
         <div className="keep-notes-list">
             {notes.map(note =>
-                 <NotePreview key={note.id} note={note} editNote={props.editNote} deleteNote={props.deleteNote} />)}
+                 <NotePreview todotoggleline={props.todotoggleline} key={note.id} note={note} editNote={props.editNote} deleteNote={props.deleteNote} />)}
         </div>
     )
 }

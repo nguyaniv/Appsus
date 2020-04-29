@@ -1,9 +1,19 @@
 
+
+
+
+
+
+
 export default class NotePreview extends React.Component {
 
     state = {
-        text: ''
+        text: '',
     }
+
+
+
+
 
     editNote = () => {
         console.log('id:', this.props.note.id);
@@ -20,6 +30,7 @@ export default class NotePreview extends React.Component {
 
 
     render() {
+
         const { note } = this.props
         return (
             <article className="note-preview">
@@ -101,13 +112,20 @@ export default class NotePreview extends React.Component {
 
 
                 {
+                    
                     note && note.type === 'NoteTodos' &&
                     <section className="keep-todo">
                         <h2>{note.type}</h2>
-                        {note.info.NoteTodos.map((todo) => {
-                            return <div key={todo.id}>
+                        {note.info.NoteTodos.map((todo,idx) => {
+                            console.log(todo)
+                            
+                            return <div key={idx }>
                                 {console.log(todo.txt)}
-                                <p className="keep-line">{todo.txt}</p>
+                                <p className={todo.isDone === true ? 'keep-line': ''}  onClick={() => {
+                                    console.log(todo.isDone)
+                                        this.props.todotoggleline(note.id,todo.id)
+                                }} >{todo.txt} </p>
+                                <hr />
                             </div>
                         })}
                         <button onClick={() => this.props.deleteNote(note.id)}> <span className="keep-icon">
@@ -120,3 +138,5 @@ export default class NotePreview extends React.Component {
         )
     }
 }
+
+
