@@ -82,7 +82,7 @@ export default class NotesAdd extends React.Component {
                             <option value="youtube">youtube</option>
                             <option value="audio">audio</option>
                         </select>
-                        <button>Add</button>
+                        <button className ="keep-btn">Add</button>
                     </form>
 
                 }
@@ -100,7 +100,7 @@ export default class NotesAdd extends React.Component {
                             <option value="youtube">youtube</option>
                             <option value="audio">audio</option>
                         </select>
-                        <button>Add</button>
+                        <button className ="keep-btn">Add</button>
                     </form>
 
                 }
@@ -119,7 +119,7 @@ export default class NotesAdd extends React.Component {
                             <option value="youtube">youtube</option>
                             <option value="audio">audio</option>
                         </select>
-                        <button>Add</button>
+                        <button className ="keep-btn">Add</button>
                     </form>
 
                 }
@@ -137,7 +137,7 @@ export default class NotesAdd extends React.Component {
                             <option value="youtube">youtube</option>
                             <option value="audio">audio</option>
                         </select>
-                        <button>Add</button>
+                        <button className ="keep-btn">Add</button>
                     </form>
 
                 }
@@ -148,7 +148,7 @@ export default class NotesAdd extends React.Component {
                 {this.state.type === 'NoteTodos' &&
 
                     <form className="keep-form" onSubmit={this.onAddTodo}>
-                        <span>add a note:</span><input onChange={this.handleInput} placeholder="pliz enter your todo sepereted by comma" type="text" name="NoteTodos" />
+                        <span>add a todo:</span><input onChange={this.handleInput} placeholder="pliz enter your todo sepereted by comma" type="text" name="NoteTodos" />
                         <select name="type" value={this.state.type} onChange={this.handleChangeType}>
                             <option value="NoteText">txt</option>
                             <option value="NoteImg">image</option>
@@ -157,7 +157,7 @@ export default class NotesAdd extends React.Component {
                             <option value="youtube">youtube</option>
                             <option value="audio">audio</option>
                         </select>
-                        <button>Add</button>
+                        <button className ="keep-btn">Add</button>
                     </form>
 
                 }
