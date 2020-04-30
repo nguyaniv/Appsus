@@ -1,5 +1,3 @@
-
-
 import utilService from '../../services/utilService.js'
 
 export default {
@@ -10,7 +8,6 @@ export default {
     toggleTodo,
     saveTodo
 }
-
 
 var gNotes = [
     {
@@ -58,12 +55,10 @@ var gNotes = [
             title: "Me playing Mi"
         },
         isPinned: true,
-
         style: {
             backgroundColor: "#00d"
         }
     },
-
     {
         id: 5,
         type: "NoteImg",
@@ -77,17 +72,9 @@ var gNotes = [
             backgroundColor: "#00d"
         }
     },
-
-    
-
-    
 ]
 
-
-
-
 function save(noteToSave) {
-    console.log('note to save:', noteToSave)
 
     if (noteToSave.id) {
         const noteIdx = _getIdxById(noteToSave.id)
@@ -97,15 +84,9 @@ function save(noteToSave) {
         noteToSave.createdAt = Date.now()
         gNotes.push(noteToSave)
     }
-
     var res = Promise.resolve(noteToSave)
-    console.log(gNotes)
-
     return res;
 }
-
-
-
 
 function saveTodo(toDoSave) {
     console.log('note to save:', toDoSave)
@@ -114,16 +95,11 @@ function saveTodo(toDoSave) {
         const noteIdx = _getIdxById(toDoSave.id)
         gNotes[noteIdx] = toDoSave;
     } else {
-
         gNotes.push(toDoSave)
     }
-
     var res = Promise.resolve(toDoSave)
-    console.log(gNotes)
-
     return res;
 }
-
 
 function getById(noteId) {
     const note = gNotes.find(note => note.id === noteId)
@@ -142,45 +118,29 @@ function _createNote(type, txt) {
     }
 }
 
-
 function deleteNote(id) {
-    console.log('deleting from service');
-
     const idx = gNotes.findIndex(note => note.id === id)
     gNotes.splice(idx, 1)
-
 }
 
 function editNote(id, txt) {
-
     const note = gNotes.find(note => note.id === id)
-
     note.info.txt = txt
-    console.log(note);
 
 }
-
 
 function toggleTodo(noteId, todoId) {
     const idx = gNotes.findIndex(note => note.id === noteId)
     var todo = gNotes[idx].info.NoteTodos[todoId]
-    console.log(todo)
-
     if (todo.isDone === true) {
-
         todo.isDone = false
     }
     else if (todo.isDone === false) {
         todo.isDone = true
     }
-
-    console.log(gNotes)
 }
 
-
 function query() {
-    console.log(gNotes);
-
     return gNotes
 }
 

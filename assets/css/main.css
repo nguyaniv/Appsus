@@ -71,7 +71,6 @@ body {
     background-color: #ffffff; 
 } */
 
-
 .opacity-box .welcome-heading {
     margin-top: 100px;
     text-shadow: 1px 1px #e8e8ff;
@@ -102,10 +101,6 @@ input {
 label {
     margin: 0 5px;
 }
-
-/* img {
-    width: 70px;
-} */
 
 header {
     font-family: MadeleinaSans;

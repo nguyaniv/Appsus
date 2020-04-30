@@ -8,14 +8,8 @@ export default class NotesAdd extends React.Component {
         type: 'NoteText'
     }
 
-
-
     handleChangeType = (ev) => {
         this.setState({ type: ev.target.value })
-        console.log(this.state);
-
-
-
     }
 
     onSaveNote = (ev) => {
@@ -24,13 +18,10 @@ export default class NotesAdd extends React.Component {
         ev.target.reset()
     }
 
-
     onAddTodo = (ev) => {
         ev.preventDefault()
         this.props.addtodo({...this.state})
     }
-
-
 
     handleInput = ({ target }) => {
         const field = target.name
@@ -49,7 +40,6 @@ export default class NotesAdd extends React.Component {
 
         return (
             <div>
-                {/* first type text */}
                 {this.state.type === 'NoteText' &&
                     <form className="keep-form" onSubmit={this.onSaveNote}>
                         <span>add a note:</span><input onChange={this.handleInput} type="text" name="txt" />
@@ -62,12 +52,9 @@ export default class NotesAdd extends React.Component {
                             <option value="audio">audio</option>
                         </select>
                         <button className="keep-btn">Add</button>
-                    </form>
-
+                  </form>
                 }
 
-
-                {/* 2nd type img */}
 
 
                 {this.state.type === 'NoteImg' &&
@@ -87,7 +74,6 @@ export default class NotesAdd extends React.Component {
 
                 }
 
-
                 {this.state.type === 'video' &&
 
                     <form className="keep-form" onSubmit={this.onSaveNote}>
@@ -105,8 +91,6 @@ export default class NotesAdd extends React.Component {
 
                 }
 
-
-
                 {this.state.type === 'audio' &&
 
                     <form className="keep-form" onSubmit={this.onSaveNote}>
@@ -121,12 +105,9 @@ export default class NotesAdd extends React.Component {
                         </select>
                         <button className ="keep-btn">Add</button>
                     </form>
-
                 }
 
-
                 {this.state.type === 'youtube' &&
-
                     <form className="keep-form" onSubmit={this.onSaveNote}>
                         <span>add youtube <strong>embed</strong> URL:</span><input onChange={this.handleInput} type="text" name="url" />
                         <select name="type" value={this.state.type} onChange={this.handleChangeType}>
@@ -139,12 +120,8 @@ export default class NotesAdd extends React.Component {
                         </select>
                         <button className ="keep-btn">Add</button>
                     </form>
-
                 }
-
-                {/* 3rd type todo */}
-
-
+             
                 {this.state.type === 'NoteTodos' &&
 
                     <form className="keep-form" onSubmit={this.onAddTodo}>
@@ -159,14 +136,7 @@ export default class NotesAdd extends React.Component {
                         </select>
                         <button className ="keep-btn">Add</button>
                     </form>
-
                 }
-
-                {/* take string from input */}
-                {/* make split with , */}
-                {/* save it to obj */}
-
-
             </div>
         )
     }

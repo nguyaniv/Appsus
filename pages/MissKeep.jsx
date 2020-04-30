@@ -25,7 +25,6 @@ export class MissKeep extends React.Component {
 
     onEditNote = (id, editedTxt) => {
         missKeepService.editNote(id, editedTxt)
-        console.log(id, editedTxt);
         this.loadNotes()
     }
 
@@ -35,37 +34,30 @@ export class MissKeep extends React.Component {
                 this.loadNotes()
             })
             .catch(err => {
-                console.log('OOPs', err);
             })
     }
 
-    onToggleTodoLine = (noteId,todoId) =>{
-        missKeepService.toggleTodo(noteId,todoId)
+    onToggleTodoLine = (noteId, todoId) => {
+        missKeepService.toggleTodo(noteId, todoId)
         this.loadNotes()
     }
-
     addTodo = (todo) => {
-        console.log(todo.info.NoteTodos)
-        
+
         var todos = todo.info.NoteTodos
         var todoList = todos.split(',')
-      var newTodoList =  todoList.map((todo,idx) =>{
-          var newId = utilService.createTodoId()
-    return  {id: idx, txt:todo, doneAt: Date.now(), isDone: false}
+        var newTodoList = todoList.map((todo, idx) => {
+            var newId = utilService.createTodoId()
+            return { id: idx, txt: todo, doneAt: Date.now(), isDone: false }
         })
-        console.log(newTodoList)
-            todo.info.NoteTodos = newTodoList
+        todo.info.NoteTodos = newTodoList
 
-            
-
-            missKeepService.saveTodo(todo)
+        missKeepService.saveTodo(todo)
             .then(() => {
                 this.loadNotes()
             })
             .catch(err => {
                 console.log('OOPs', err);
             })
-
     }
 
     render() {

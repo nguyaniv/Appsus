@@ -2,8 +2,6 @@ import NotePreview from './NotePreview.jsx'
 
 export default function NotesList(props) {
     var notes = props.notes
-    console.log(props.editNote)
-    
     return (
         <div className="keep-notes-list">
             {notes.map(note =>

@@ -30,6 +30,12 @@
 }
 
 
+.keep-todo p {
+    cursor: pointer;
+    text-align: center;
+}
+
+
 .keep-notes-list{
     display: flex;
     justify-content:  center;
@@ -38,7 +44,6 @@
 
 .keep-notes-list p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    cursor: pointer;
 }
 
 .keep-img-note {
@@ -48,15 +53,11 @@
     max-width: 460px;
     margin: 0 10px;
     text-align: center;
-
-
 }
 
 .keep-img-note img {
     max-width: 350px;
 }
-
-
 
 .keep-icon {
     font-size: 1.5em;
