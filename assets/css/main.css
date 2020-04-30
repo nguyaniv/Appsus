@@ -92,6 +92,10 @@ body {
     padding: 60px 0 70px;
     font-size: 1.875rem;
     text-align: center;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 input {

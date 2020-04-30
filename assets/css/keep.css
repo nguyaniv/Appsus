@@ -4,7 +4,7 @@
 .keep-notes{
     display: flex;
     align-items: center;
-    background-color:white;
+    background-color:#dcf3f2;
     justify-content: space-around;
     flex-direction: column;
     flex-wrap: wrap;
