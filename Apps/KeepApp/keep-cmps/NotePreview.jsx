@@ -58,7 +58,7 @@ export default class NotePreview extends React.Component {
                 {note && note.type === 'NoteImg' &&
                     <section className="keep-img-note">
                         <h2>{note.type}  </h2>
-                        <img src={note.info.url} />
+                        <img  src={note.info.url} />
                         <br/>
                         <button onClick={() => this.props.deleteNote(note.id)}> <span className="keep-icon">
                             <i className="fas fa-trash-alt"></i>

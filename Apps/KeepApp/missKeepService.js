@@ -41,11 +41,46 @@ var gNotes = [
         info: {
             label: "How was it:",
             NoteTodos: [
-                { id: 0, txt: "Do that", isDone: false },
-                { id: 1, txt: "Do this", isDone: false }
+                { id: 0, txt: "eat", isDone: false },
+                { id: 1, txt: "sleep", isDone: false },
+                { id: 2, txt: "code", isDone: false },
+                { id: 3, txt: "code all night", isDone: false },
+                { id: 4, txt: "PAST OUT", isDone: false }
             ]
         }
-    }
+    },
+
+    {
+        id: 4,
+        type: "NoteImg",
+        info: {
+            url: "https://yesno.wtf/assets/yes/8-2f93962e2ab24427df8589131da01a4d.gif",
+            title: "Me playing Mi"
+        },
+        isPinned: true,
+
+        style: {
+            backgroundColor: "#00d"
+        }
+    },
+
+    {
+        id: 5,
+        type: "NoteImg",
+        info: {
+            url: "https://yesno.wtf/assets/no/12-dafd576be23d3768641340f76658ddfe.gif",
+            title: "Me playing Mi"
+        },
+        isPinned: true,
+
+        style: {
+            backgroundColor: "#00d"
+        }
+    },
+
+    
+
+    
 ]
 
 
