@@ -61,7 +61,7 @@ export default class NotesAdd extends React.Component {
                             <option value="youtube">youtube</option>
                             <option value="audio">audio</option>
                         </select>
-                        <button>Add</button>
+                        <button className="keep-btn">Add</button>
                     </form>
 
                 }

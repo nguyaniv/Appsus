@@ -49,7 +49,7 @@ export default class NotePreview extends React.Component {
                         <button onClick={this.editNote}>
                             <span className="keep-icon">
                                 <i className="fas fa-edit"></i>
-                            /</span>
+                            </span>
                         </button>
 
                     </section>
@@ -59,6 +59,7 @@ export default class NotePreview extends React.Component {
                     <section className="keep-img-note">
                         <h2>{note.type}  </h2>
                         <img src={note.info.url} />
+                        <br/>
                         <button onClick={() => this.props.deleteNote(note.id)}> <span className="keep-icon">
                             <i className="fas fa-trash-alt"></i>
                         </span></button>
