@@ -27,7 +27,7 @@ export default class NotePreview extends React.Component {
                                 <i className="fas fa-trash-alt"></i>
                             </span>
                         </button>
-                        <input type="text" onChange={this.handleInput} />
+                        <input type="text" onChange={this.handleInput} placeholder="edit text here" />
                         <button onClick={this.editNote}>
                             <span className="keep-icon">
                                 <i className="fas fa-edit"></i>
