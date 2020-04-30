@@ -72,6 +72,20 @@ var gNotes = [
             backgroundColor: "#00d"
         }
     },
+
+    {
+        id: 6,
+        type: "NoteImg",
+        info: {
+            url: "https://i.giphy.com/media/yH44qh8DpNyfK/giphy.webp",
+            title: "Me playing Mi"
+        },
+        isPinned: true,
+
+        style: {
+            backgroundColor: "#00d"
+        }
+    },
 ]
 
 function save(noteToSave) {

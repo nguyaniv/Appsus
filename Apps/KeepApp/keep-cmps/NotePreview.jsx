@@ -20,7 +20,7 @@ export default class NotePreview extends React.Component {
             <article className="note-preview">
                 {note && note.type === 'NoteText' &&
                     <section className="keep-note-txt">
-                        <h2>{note.type}  </h2>
+                        <h2>Text Note  </h2>
                         <p>{note.info.txt}</p>
                         <button onClick={() => this.props.deleteNote(note.id)}>
                             <span className="keep-icon">
@@ -38,7 +38,7 @@ export default class NotePreview extends React.Component {
 
                 {note && note.type === 'NoteImg' &&
                     <section className="keep-img-note">
-                        <h2>{note.type}  </h2>
+                        <h2>Image note  </h2>
                         <img src={note.info.url} />
                         <br />
                         <button onClick={() => this.props.deleteNote(note.id)}> <span className="keep-icon">
@@ -49,7 +49,7 @@ export default class NotePreview extends React.Component {
 
                 {note && note.type === 'video' &&
                     <section className="keep-img-note">
-                        <h2>{note.type}  </h2>
+                        <h2>Media  </h2>
                         <video controls autoPlay src={note.info.url}> </video>
                         <button onClick={() => this.props.deleteNote(note.id)}> <span className="keep-icon">
                             <i className="fas fa-trash-alt"></i>
@@ -59,7 +59,7 @@ export default class NotePreview extends React.Component {
 
                 {note && note.type === 'audio' &&
                     <section className="keep-img-note">
-                        <h2>{note.type}  </h2>
+                        <h2>audio  </h2>
                         <audio controls autoPlay src={note.info.url}> </audio>
                         <button onClick={() => this.props.deleteNote(note.id)}> <span className="keep-icon">
                             <i className="fas fa-trash-alt"></i>
@@ -69,7 +69,7 @@ export default class NotePreview extends React.Component {
 
                 {note && note.type === 'youtube' &&
                     <section className="keep-img-note">
-                        <h2>{note.type}  </h2>
+                        <h2>media  </h2>
                         <iframe width="560" height="315"
                             src={note.info.url} frameBorder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -84,7 +84,7 @@ export default class NotePreview extends React.Component {
 
                     note && note.type === 'NoteTodos' &&
                     <section className="keep-todo">
-                        <h2>{note.type}</h2>
+                        <h2>Todo</h2>
                         {note.info.NoteTodos.map((todo, idx) => {
                             return <div key={idx}>
                                 <p className={todo.isDone === true ? 'keep-line' : ''} onClick={() => {
