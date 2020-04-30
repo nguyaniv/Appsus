@@ -25,7 +25,7 @@ export class App extends React.Component {
                     </Switch>
                 </main>
                 <footer className="main-footer">
-                    coffeerights 2020 &copy;
+                    copyrights 2020 &copy;
                 </footer>
             </Router>
         )
