@@ -11,7 +11,7 @@
 }
 
 .keep-note-txt { 
-    border: 3px solid rgb(167, 165, 165);
+    border: 3px solid rgb(69, 26, 185);
     border-radius: 5px;
     margin: 0 10px;
     padding: 10px;
@@ -20,7 +20,7 @@
 }
 
 .keep-todo { 
-    border: 3px solid rgb(167, 165, 165);
+    border: 3px solid rgb(69, 26, 185);
     border-radius: 5px;
     padding: 5px;
     margin: 0 10px;
@@ -47,7 +47,7 @@
 }
 
 .keep-img-note {
-    border:3px solid rgb(167, 165, 165) ;
+    border: 3px solid rgb(69, 26, 185);
     border-radius: 5px;
     padding: 5px;
     max-width: 460px;
@@ -74,9 +74,9 @@
 
 .keep-form { 
     margin: 10px;
-    background-color: silver;
+    background-color: #b0c9c8;
     padding: 15px;
-    border: 3px solid  rgb(104, 98, 98);
+    border: 3px solid rgb(69, 26, 185);
     border-radius: 5px;
     font-size: 1rem;
     display: flex;
