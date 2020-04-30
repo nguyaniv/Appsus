@@ -8,6 +8,10 @@
     justify-content: space-around;
     flex-direction: column;
     flex-wrap: wrap;
+    border-top: 2px solid  rgb(69, 26, 185);
+    border-bottom: 2px solid  rgb(69, 26, 185);
+    
+
 }
 
 .keep-note-txt { 
